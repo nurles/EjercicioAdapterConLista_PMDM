@@ -19,11 +19,11 @@ class MainActivity : AppCompatActivity() {
     }
     private fun createRecyclerView() {
         val rand = Random()
-        var numElementos = rand.nextInt(5..10)
-        val listaString = listOf("PC-1","PC-2","PC-3","PC-4","PC-5")
-        /*for(i in 1..numElementos) {
+        val numElementos = rand.nextInt(5..10)
+        val listaString = mutableListOf<String>()
+        for(i in 1..numElementos) {
             listaString.add("PC-$i")
-        }*/
+        }
         adapter = StringAdapter(listaString.toMutableList())
         binding.recyclerView.layoutManager = LinearLayoutManager(this)
         binding.recyclerView.adapter = adapter
